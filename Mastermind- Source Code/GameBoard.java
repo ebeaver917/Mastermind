@@ -2,13 +2,13 @@
 
 /* This class file handles the gameboard and all related functionalities */
 
-/* The file contains the following sub-classes:												*/
+/* The file contains the following sub-classes:							*/
 /* ColorSelect: Handles the painting of any colors seen on the display besides the hints 	*/
 
 /* HintColor: Handles the hint colors, must be separate from ColorSelect because hints are 	*/
-/* drawn smaller than all other colors.													   	*/
+/* drawn smaller than all other colors.								*/
 
-/* Click: Handles what occurs when the mouse is clicked on-screen. 							*/
+/* Click: Handles what occurs when the mouse is clicked on-screen. 				*/
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,10 +23,10 @@ public class GameBoard extends JPanel {
 	private JLabel question2;
 	private JLabel M;
 	
-	public int [] code;			//array that holds the secret code
+	public int [] code;		//array that holds the secret code
 	private int numGuesses;
 	
-	Click clicked;				//object of type CLick to handle the game's clicking
+	Click clicked;			//object of type CLick to handle the game's clicking
 	
 	//class constructor
 	//because the number of guesses is changed when 
@@ -184,7 +184,7 @@ public class GameBoard extends JPanel {
 	//for each hint box component
 	public class HintColor extends JComponent {
 		
-		int x, y; 		//the position of the color
+		int x, y; 	//the position of the color
 		Color color;	//the color
 		
 		HintColor(int x, int y, int colorParam) {
@@ -214,7 +214,7 @@ public class GameBoard extends JPanel {
 	
 	public class Click extends MouseAdapter {	
 		
-		int colorCounter = 0;			//counter variables
+		int colorCounter = 0;		//counter variables
 		int guessCounter = 0;
 		int hintCounter = 0;
 
@@ -295,7 +295,7 @@ public class GameBoard extends JPanel {
 				ColorSelect blue = new ColorSelect(currentChoice, currentGuess, 1);
 				setLayout(new BorderLayout());
 				GameBoard.this.add(blue, BorderLayout.CENTER);		//add the new component to the board
-				guesses[colorCounter] = 1;							//make the value of the current guesses index the value for blue
+				guesses[colorCounter] = 1;				//make the value of the current guesses index the value for blue
 				colorCounter++;						
 			}
 				
